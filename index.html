@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce em JavaScript</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section
+      class="fixed top-0 bg-violet-800 h-screen w-[360px] text-slate-200 right-[-360px] z-50 rounded-l-lg duration-200 p-5 flex flex-col justify-between"
+      id="carrinho"
+    >
+      <div class="flex justify-between m-3" id="cabecalho-carrinho">
+        <p>Meu Carrinho</p>
+        <button id="fechar-carrinho">
+          <i class="fa-solid fa-rectangle-xmark hover:text-red-600"></i>
+        </button>
+      </div>
+      <section
+        id="produtos-carrinho"
+        class="rounded-l-lg h-3/5 overflow-y-auto flex flex-col gap-2"
+      ></section>
+      <p
+        id="preco-total"
+        class="bg-amber-600 text-white font-bold rounded-b-lg p-2 max-w-fit"
+      >
+        Total: R$ 0
+      </p>
+      <button
+        class="bg-gradient-to-r from-indigo-500 via-purple-500 to-gray p-1 hover:from-amber-600 hover:to-blue-500 text-xl" id="finalizar-compra"
+      >
+        Finalizar Compra
+      </button>
+    </section>
+    <header
+      class="flex bg-amber-600 h-24 px-8 py-4 justify-between sticky top-0 shadow-xl shadow-yellow-900 text-xl z-40"
+    >
+      <a href="./"><img class="h-16" src="./assets/logo/hashtag.svg" alt="Logotipo Hashtag" /></a>
+      <div class="flex gap-5 items-end">
+        <button
+          class="mx-2 text-violet-800 hover:text-blue-600"
+          id="abrir-carrinho"
+        >
+          <i class="fa-solid fa-bag-shopping"></i>
+        </button>
+        <a href="/pedidos.html">
+          <button class="mr-2 text-violet-800 hover:text-blue-600">
+            <i class="fa-solid fa-user-large"></i>
+          </button>
+        </a>
+      </div>
+    </header>
+    <main class="bg-lime-100 flex flex-col items-center">
+      <section id="filtros" class="p-10 flex">
+        <div class="p-2">
+          <input
+            type="radio"
+            name="filtrar"
+            id="exibir-todos"
+            class="peer hidden"
+            checked
+          />
+          <label
+            for="exibir-todos"
+            class="peer-checked:bg-amber-600 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer"
+            >Todos</label
+          >
+        </div>
+        <div class="p-2">
+          <input
+            type="radio"
+            name="filtrar"
+            id="exibir-femininos"
+            class="peer hidden"
+          />
+          <label
+            for="exibir-femininos"
+            class="peer-checked:bg-amber-600 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer"
+            >Femininos</label
+          >
+        </div>
+        <div class="p-2">
+          <input
+            type="radio"
+            name="filtrar"
+            id="exibir-masculinos"
+            class="peer hidden"
+          />
+          <label
+            for="exibir-masculinos"
+            class="peer-checked:bg-amber-600 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer"
+            >Masculino</label
+          >
+        </div>
+      </section>
+      <section
+        class="flex flex-wrap p-10 justify-center gap-10"
+        id="container-produto"
+      ></section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
